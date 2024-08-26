@@ -1,5 +1,4 @@
-
-import NetflixSeries from './NetflixSeries'
+import NetflixSeries from "./components/NetflixSeries"
 
  function App() {
   
