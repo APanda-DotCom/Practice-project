@@ -1,68 +1,99 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* General Styles */
 body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.container {
+  max-width: 1200px; /* Container with a more common max width */
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
-button {
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: 4rem; /* Smaller, consistent gap for a tighter layout */
+  align-items: start; /* Align grid items to start */
+}
+
+.grid-two-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Card Styles */
+.card {
+  height:50rem;
+  list-style-type: none; /* Remove bullet points from li elements */
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 5px solid #f4f4f4;
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+.card-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #007BFF; /* Accent color */
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.card-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  color: #666;
+}
+
+.card-button {
+  background-color: #36148d; /* Blue button color */
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: background-color 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.card-button:hover {
+  background-color: #5f5dc9; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .grid-two-cols, .grid-three-cols {
+      grid-template-columns: 1fr; /* Stack columns on smaller screens */
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+
+  .container {
+      padding: 2rem 1rem; /* Adjust padding for mobile */
   }
 }
